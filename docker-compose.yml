@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  service:
+    container_name: issue-reader-3000-service
+    build: service
+    ports:
+      - 8080:8080
+    env_file:
+      - ./service/.env
+  app:
+    container_name: issue-reader-3000-app
+    build: app
+    ports:
+      - 80:80

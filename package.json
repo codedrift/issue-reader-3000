@@ -1,0 +1,41 @@
+{
+  "name": "issue-reader-3000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run start:app\" \"npm run start:service\"",
+    "start:app": "cd app && npm i && npm start",
+    "start:service": "cd service && npm i && npm run start",
+    "prepare": "husky install",
+    "format": "prettier --write '**/*.{ts,tsx,css,md,json,yml,scss}'",
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedrift/issue-reader-3000.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codedrift/issue-reader-3000/issues"
+  },
+  "homepage": "https://github.com/codedrift/issue-reader-3000#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "eslint": "^8.23.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{scss,css,md,json,yml}": [
+      "prettier --write"
+    ]
+  }
+}

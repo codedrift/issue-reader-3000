@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""author"""
+type AuthorInfo {
+  avatar: String!
+  name: String!
+}
+
+"""comment"""
+type CommentData {
+  author: AuthorInfo!
+  bodyHTML: String!
+  createdAt: String!
+  id: ID!
+}
+
+"""issue"""
+type CustomIssue {
+  author: AuthorInfo!
+  body: String!
+  closed: Boolean!
+  createdAt: String!
+  id: ID!
+  number: Float!
+  title: String!
+}
+
+"""issue-detail"""
+type CustomIssueDetail {
+  author: AuthorInfo!
+  bodyHTML: String!
+  closed: Boolean!
+  comments: [CommentData!]!
+  createdAt: String!
+  id: ID!
+  number: Float!
+  title: String!
+}
+
+type Query {
+  issue(number: Float!, owner: String!, repository: String!): CustomIssueDetail!
+  issues(count: Int = 100, owner: String!, repository: String!, status: String!): [CustomIssue!]!
+}

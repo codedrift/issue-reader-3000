@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  issue-reader-3000-service:
+    build: .
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
