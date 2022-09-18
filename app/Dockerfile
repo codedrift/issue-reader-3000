@@ -1,7 +1,8 @@
 FROM node:latest AS builder
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 WORKDIR /app
-COPY package*.json ./
+COPY package.json ./
+COPY package-lock.json ./
 RUN npm i
 COPY . .
 RUN npm run build

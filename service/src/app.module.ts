@@ -24,7 +24,7 @@ import { HealthModule } from "./health/health.module";
       driver: ApolloDriver,
       debug: true,
       playground: true,
-      autoSchemaFile: "schema.gql",
+      autoSchemaFile: true,
       sortSchema: true,
     }),
     HealthModule,
